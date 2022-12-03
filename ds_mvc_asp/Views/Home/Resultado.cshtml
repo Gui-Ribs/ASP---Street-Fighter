@@ -1,0 +1,104 @@
+﻿@model ds_mvc_asp.Models.Usuario
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #D24210;
+        margin-bottom: 20px;
+    }
+
+    dt, dd  {
+        padding: 10px;
+        color: #000;
+        font-family: sans-serif;
+
+    }
+
+    #content-body {
+        
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 600px;
+        width: 325px;
+    }
+
+    #voltar a {
+        text-decoration: none;
+        color: #D24210;
+        display: flex;
+        justify-content: center;
+    }
+
+
+ 
+</style>
+
+
+<div id="content-body">
+
+    <h2>Seu dados!</h2>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeUsuario)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confsenha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confsenha)
+        </dd>
+
+    </dl>
+
+    <div class="col-md-offset-2 col-md-10" id="voltar">
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+
+    <div id="bb">
+
+    </div>
+
+</div>

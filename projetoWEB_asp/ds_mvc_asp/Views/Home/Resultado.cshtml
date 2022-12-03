@@ -1,0 +1,134 @@
+﻿@model ds_mvc_asp.Models.Usuario
+
+@{
+    ViewBag.Title = "Resultado";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background-image: url(/Content/img/resultado.png);
+        background-size: cover;
+        
+    }
+
+    h2 {
+        margin-left: 50px;
+        margin-top: 0px;
+        margin-bottom: 50px;
+        padding-top: 20px;
+        font-family: 'Bangers';
+        color: #C81921;
+    }
+
+    dt, dd  {
+        padding: 10px;
+        color: #000;
+        font-family: sans-serif;
+
+    }
+    @*p {
+        margin-left: 150px;
+    }*@
+    #corpo {
+        margin-left: 45px;
+        width: 325px;
+        height: 500px;
+        background: #c2c2c2;
+    }
+
+
+    /*BOTÃO VOLTAR*/
+    #voltar {
+        display: flex;
+        justify-content: center;
+        margin-left: 9%;
+    }
+
+        #voltar a {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+        }
+</style>
+
+
+<div id="corpo">
+
+    <h2>Resultado cadastro</h2>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeUsuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeUsuario)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Confsenha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confsenha)
+        </dd>
+
+    </dl>
+
+    <div class="col-md-offset-2 col-md-10" id="voltar">
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+
+    <div id="bb">
+
+    </div>
+
+</div>

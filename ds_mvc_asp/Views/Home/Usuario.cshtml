@@ -1,0 +1,127 @@
+﻿@model ds_mvc_asp.Models.Usuario
+
+@{
+    ViewBag.Title = "Usuario";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+
+<style>
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #D24210;
+        margin-right: 40px;
+    }
+
+    #telacadastro {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        display: flex;
+        align-content: center;
+        color: black;
+        padding-bottom: 10px;
+    }
+
+    #buttons {
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+
+    #voltar {
+        display: flex;
+        padding-top: 15px;
+        margin-left: 70px;
+    }
+
+    #cadastrar {
+        margin-left: 45px;
+     }
+
+    #voltar a {
+        text-decoration: none;
+        color: #D24210;
+    }
+
+</style>
+
+
+
+
+<div id="telacadastro">
+    <h2>Cadastre-se!</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <br />
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.NomeUsuario, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-15">
+                    @Html.EditorFor(model => model.NomeUsuario, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NomeUsuario, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Idade, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-15">
+                    @Html.EditorFor(model => model.Idade, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Idade, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-15">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-15">
+                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Confsenha, htmlAttributes: new { @class = "control-label" })
+                <div class="col-md-15">
+                    @Html.EditorFor(model => model.Confsenha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Confsenha, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" id="buttons">
+                <div class="col-md-offset-2 col-md-10" id="cadastrar">
+                    <input type="submit" value="Cadastrar" class="btn btn-default" />
+                </div>
+                <div class="col-md-offset-2 col-md-10" id="voltar">
+                    @Html.ActionLink("Voltar", "Index")
+                </div>
+            </div>
+
+        </div>
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+</div>
